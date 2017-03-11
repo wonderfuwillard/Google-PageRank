@@ -39,7 +39,7 @@ function [p, iters] = PageRank(G, alpha)
 
     Pp=P+(1/R)*e*d; %calculate P'
     
-    M=alpha*Pp+(1-alpha)*(1/R)*ones(R);
+    M=alpha*Pp+(1-alpha)*(1/R)*ones(R); %All previous steps is for this Markov Transition Matrix
     op=e/R;
     while(max(op-p)>10^-8)  %iterate untill get p=Mp
         p=op;
